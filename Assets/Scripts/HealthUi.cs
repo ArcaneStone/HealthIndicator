@@ -12,21 +12,38 @@ public class HealthUi : MonoBehaviour
 
     [SerializeField] private Health _playerHealth;
 
+    private float _targetSmoothHealth;
+
     private void Start()
     {
         _healthBar.maxValue = _playerHealth.MaxHealthValue;
         _smoothHealthBar.maxValue = _playerHealth.MaxHealthValue;
 
+        _healthBar.value = _playerHealth.CurrentHealth;
         _smoothHealthBar.value = _playerHealth.CurrentHealth;
+        _targetSmoothHealth = _playerHealth.CurrentHealth;
+
+        _playerHealth.OnHealthChanged += UpdateHealthUI;
+    }
+
+    private void OnDestroy()
+    {
+        _playerHealth.OnHealthChanged -= UpdateHealthUI;
     }
 
     private void Update()
     {
-        _healthText.text = $"{_playerHealth.CurrentHealth}/{_playerHealth.MaxHealthValue}";
-
-        _healthBar.value = _playerHealth.CurrentHealth;
-
         float step = _smoothSpeed * Time.deltaTime;
-        _smoothHealthBar.value = Mathf.MoveTowards(_smoothHealthBar.value, _playerHealth.CurrentHealth, step);
+
+        _smoothHealthBar.value = Mathf.MoveTowards(_smoothHealthBar.value, _targetSmoothHealth, step);
+    }
+
+    private void UpdateHealthUI(float currentHealth)
+    {
+        _healthText.text = $"{currentHealth}/{_playerHealth.MaxHealthValue}";
+
+        _healthBar.value = currentHealth;
+
+        _targetSmoothHealth = currentHealth;
     }
 }
