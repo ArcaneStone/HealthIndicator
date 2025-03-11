@@ -2,7 +2,12 @@ using UnityEngine;
 
 public abstract class HealthButton : MonoBehaviour
 {
-    [SerializeField] protected Health PlayerHealth;
+    protected Health PlayerHealth;
+
+    public void Initialize(Health health)
+    {
+        PlayerHealth = health;
+    }
 
     public abstract void OnButtonClick();
 }

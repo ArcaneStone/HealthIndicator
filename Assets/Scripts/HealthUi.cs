@@ -6,12 +6,12 @@ public abstract class HealthUi : MonoBehaviour
 {
     [SerializeField] protected Health PlayerHealth;
 
-    protected virtual void Start()
+    protected virtual void OnEnable()
     {
         PlayerHealth.OnHealthChanged += UpdateHealthUI;
     }
 
-    private void OnDestroy()
+    protected virtual void OnDisable()
     {
         PlayerHealth.OnHealthChanged -= UpdateHealthUI;
     }

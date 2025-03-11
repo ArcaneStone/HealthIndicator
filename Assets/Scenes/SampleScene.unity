@@ -1076,6 +1076,7 @@ GameObject:
   - component: {fileID: 1010765976}
   - component: {fileID: 1010765978}
   - component: {fileID: 1010765977}
+  - component: {fileID: 1010765979}
   m_Layer: 0
   m_Name: HealthTest
   m_TagString: Untagged
@@ -1110,7 +1111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b956720a84961e34c81c724e020d4b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 1535566888}
   _healAmount: 10
 --- !u!114 &1010765978
 MonoBehaviour:
@@ -1124,8 +1124,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b8a87685af7340b940e48c536a341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 1535566888}
   _damageAmount: 10
+--- !u!114 &1010765979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010765974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e28225973e6234ab72a968f8be3110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1535566888}
+  healButton: {fileID: 1010765977}
+  takeDamageButton: {fileID: 1010765978}
 --- !u!1 &1061721222
 GameObject:
   m_ObjectHideFlags: 0

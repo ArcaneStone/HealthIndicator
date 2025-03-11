@@ -8,23 +8,24 @@ public class SmoothHealthBarUi : HealthUi
 
     private float _targetSmoothHealth;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         _smoothHealthBar.maxValue = PlayerHealth.MaxHealthValue;
         _smoothHealthBar.value = PlayerHealth.CurrentHealth;
         _targetSmoothHealth = PlayerHealth.CurrentHealth;
     }
 
-    private void Update()
-    {
-        float step = _smoothSpeed * Time.deltaTime;
-        _smoothHealthBar.value = Mathf.MoveTowards(_smoothHealthBar.value, _targetSmoothHealth, step);
-    }
-
     protected override void UpdateHealthUI(float currentHealth)
     {
         _targetSmoothHealth = currentHealth;
+    }
+
+    private void LateUpdate()
+    {
+        if (_smoothHealthBar.value !=_targetSmoothHealth)
+        {
+            float step = _smoothSpeed * Time.deltaTime;
+            _smoothHealthBar.value = Mathf.MoveTowards(_smoothHealthBar.value, _targetSmoothHealth, step);
+        }
     }
 }
