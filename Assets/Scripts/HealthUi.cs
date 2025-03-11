@@ -4,16 +4,16 @@ using TMPro;
 
 public abstract class HealthUi : MonoBehaviour
 {
-    [SerializeField] protected Health _playerHealth;
+    [SerializeField] protected Health PlayerHealth;
 
     protected virtual void Start()
     {
-        _playerHealth.OnHealthChanged += UpdateHealthUI;
+        PlayerHealth.OnHealthChanged += UpdateHealthUI;
     }
 
     private void OnDestroy()
     {
-        _playerHealth.OnHealthChanged -= UpdateHealthUI;
+        PlayerHealth.OnHealthChanged -= UpdateHealthUI;
     }
 
     protected abstract void UpdateHealthUI(float currentHealth);

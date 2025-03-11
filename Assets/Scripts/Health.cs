@@ -17,10 +17,12 @@ public class Health : MonoBehaviour
         CurrentHealth = _maxHealth;
     }
 
-    public void TakeDamage(float damageAmount)
+    private void ChangeHealth(float amount)
     {
+        if (amount == 0) return;
+
         float oldHealth = CurrentHealth;
-        CurrentHealth = Mathf.Clamp(CurrentHealth - damageAmount, 0, _maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _maxHealth);
 
         if (CurrentHealth != oldHealth)
         {
@@ -31,6 +33,24 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        if (damageAmount < 0)
+        {
+            return;
+        }
+        ChangeHealth(-damageAmount);
+    }
+
+    public void Heal(float healAmount)
+    {
+        if (healAmount < 0)
+        {
+            return;
+        }
+        ChangeHealth(healAmount);
     }
 
     protected virtual void Die()

@@ -12,9 +12,9 @@ public class SmoothHealthBarUi : HealthUi
     {
         base.Start();
 
-        _smoothHealthBar.maxValue = _playerHealth.MaxHealthValue;
-        _smoothHealthBar.value = _playerHealth.CurrentHealth;
-        _targetSmoothHealth = _playerHealth.CurrentHealth;
+        _smoothHealthBar.maxValue = PlayerHealth.MaxHealthValue;
+        _smoothHealthBar.value = PlayerHealth.CurrentHealth;
+        _targetSmoothHealth = PlayerHealth.CurrentHealth;
     }
 
     private void Update()

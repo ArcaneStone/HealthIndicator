@@ -7,6 +7,6 @@ public class HealthTextUi : HealthUi
 
     protected override void UpdateHealthUI(float currentHealth)
     {
-        _healthText.text = $"{currentHealth}/{_playerHealth.MaxHealthValue}";
+        _healthText.text = $"{currentHealth}/{PlayerHealth.MaxHealthValue}";
     }
 }

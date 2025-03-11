@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07b460797c94504294be42bc379acf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 1535566888}
+  PlayerHealth: {fileID: 1535566888}
   _healthBar: {fileID: 1092500799}
 --- !u!4 &248450176
 Transform:
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f140e0fec533d4aac9594d22262657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 1535566888}
+  PlayerHealth: {fileID: 1535566888}
   _smoothHealthBar: {fileID: 448398745}
   _smoothSpeed: 35
 --- !u!4 &549944829
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b956720a84961e34c81c724e020d4b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 1535566888}
+  PlayerHealth: {fileID: 1535566888}
   _healAmount: 10
 --- !u!114 &1010765978
 MonoBehaviour:
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b8a87685af7340b940e48c536a341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 1535566888}
+  PlayerHealth: {fileID: 1535566888}
   _damageAmount: 10
 --- !u!1 &1061721222
 GameObject:
@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522a3b1c8ef4f924d899d0432d688a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 1535566888}
+  PlayerHealth: {fileID: 1535566888}
   _healthText: {fileID: 1061721225}
 --- !u!1 &1714161032
 GameObject:

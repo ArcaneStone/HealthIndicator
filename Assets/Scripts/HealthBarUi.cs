@@ -9,8 +9,8 @@ public class HealthBarUi : HealthUi
     {
         base.Start();
 
-        _healthBar.maxValue = _playerHealth.MaxHealthValue;
-        _healthBar.value = _playerHealth.CurrentHealth;
+        _healthBar.maxValue = PlayerHealth.MaxHealthValue;
+        _healthBar.value = PlayerHealth.CurrentHealth;
     }
 
     protected override void UpdateHealthUI(float currentHealth)
